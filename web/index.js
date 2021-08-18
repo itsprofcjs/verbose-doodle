@@ -5,6 +5,8 @@ const app = express();
 const APP_PORT = 8080;
 
 app.get('/', (req, res) => {
+    console.log('req', req.host);
+
     res.send('Hi CJS!');
 });
 
