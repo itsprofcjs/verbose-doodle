@@ -1,0 +1,15 @@
+# setting up the base platform
+FROM node:alpine
+
+# set the base path for all the operation
+WORKDIR /var/frontend
+
+# copy the package.json for installing
+COPY package.json .
+# install the dependencies
+RUN npm i --legacy-peer-deps
+# copy the remaining files to workdir
+COPY . .
+
+# set intial launch up command
+CMD [ "npm", "run" , "start" ]
